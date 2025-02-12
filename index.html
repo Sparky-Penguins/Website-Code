@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Sparky Penguins Inc.</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Sparky Penguins Inc.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="SparkyPengiuns.apps.googleusercontent.com">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
+
 <body>
-
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>Sparky Penguin Inc.</b> </a>
-    <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-      <a href="#services" class="w3-bar-item w3-button">Services</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+            <a href="#home" class="w3-bar-item w3-button"><b>Sparky Penguin Inc.</b> </a>
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#services" class="w3-bar-item w3-button">Services</a>
+                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="/images/electrical_banner.jpg" alt="Sparky Penguin Inc." width="1500" height="800">
-  <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Sparky</b></span> <span class="w3-hide-small w3-text-light-grey">Penguin Inc.</span></h1>
-  </div>
-</header>
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+        <img class="w3-image" src="/images/electrical_banner.jpg" alt="Sparky Penguin Inc." width="1500" height="800">
+        <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Sparky</b></span>
+                <span class="w3-hide-small w3-text-light-grey">Penguin Inc.</span></h1>
+        </div>
+    </header>
 
-<!-- About Section -->
-<div class="w3-container w3-padding-32" id="about">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About Us</h3>
-  <p>Sparky Penguins Inc. is a professional electrical contracting company specializing in residential and commercial projects. Our licensed electricians provide high-quality electrical installations, repairs, and upgrades, ensuring safety and efficiency for our clients.</p>
-</div>
+    <!-- About Section -->
+    <div class="w3-container w3-padding-32" id="about">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About Us</h3>
+        <p>Sparky Penguins Inc. is a professional electrical contracting company specializing in residential and
+            commercial projects. Our licensed electricians provide high-quality electrical installations, repairs, and
+            upgrades, ensuring safety and efficiency for our clients.</p>
+    </div>
 
-<!-- Services Section -->
-<div class="w3-container w3-padding-32" id="services">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Services</h3>
-  <ul>
-    <li>Residential Electrical Wiring</li>
-    <li>Commercial Electrical Installations</li>
-    <li>Panel Upgrades & Repairs</li>
-    <li>Lighting Design & Installation</li>
-    <li>Emergency Electrical Services</li>
-  </ul>
-</div>
+    <!-- Services Section -->
+    <div class="w3-container w3-padding-32" id="services">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Services</h3>
+        <ul>
+            <li>Residential Electrical Wiring</li>
+            <li>Commercial Electrical Installations</li>
+            <li>Panel Upgrades & Repairs</li>
+            <li>Lighting Design & Installation</li>
+            <li>Emergency Electrical Services</li>
+        </ul>
+    </div>
 
-<!-- Contact Section -->
-<div class="w3-container w3-padding-32" id="contact">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
-  <p>We'd love to hear from you! Reach out to us for your electrical needs.</p>
-  <form action="#" target="_blank">
-    <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-    <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
-    <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-    <input class="w3-input w3-section w3-border" type="text" placeholder="Message" required name="Message">
-    <button class="w3-button w3-black w3-section" type="submit">
-      <i class="fa fa-paper-plane"></i> SEND MESSAGE
-    </button>
-  </form>
-</div>
+    <!-- Contact Section -->
+    <div class="w3-container w3-padding-32" id="contact">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
+        <p>We'd love to hear from you! Reach out to us for your electrical needs.</p>
+        <form action="#" target="_blank">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+            <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+            <input class="w3-input w3-section w3-border" type="text" placeholder="Message" required name="Message">
+            <button class="w3-button w3-black w3-section" type="submit">
+                <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            </button>
+        </form>
+    </div>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-  <p>&copy; 2025 Sparky Penguin Inc. | Electrical Contracting Services</p>
-</footer>
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-16">
+        <p>&copy; 2025 Sparky Penguin Inc. | Electrical Contracting Services</p>
+    </footer>
 
 </body>
+
 </html>
