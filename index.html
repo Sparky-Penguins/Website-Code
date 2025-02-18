@@ -6,75 +6,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-signin-client_id" content="SparkyPengiuns.apps.googleusercontent.com">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
     
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="./assets/Sparky_Penguins_Logo.png" class="logo" alt="Sparky Penguin Logo" width="150">
+    </div>
+
     <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-            <a href="#home" class="w3-bar-item w3-button"><b>Sparky Penguin Inc.</b> </a>
-            <div class="w3-right w3-hide-small">
-                <a href="#about" class="w3-bar-item w3-button">About</a>
-                <a href="#services" class="w3-bar-item w3-button">Services</a>
-                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            </div>
+    <div class="navbar">
+        <a href="#home"><b>Sparky Penguin Inc.</b></a>
+        <div class="right">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-        <img class="w3-image" src="/images/electrical_banner.jpg" alt="Sparky Penguin Inc." width="1500" height="800">
-        <div class="w3-display-middle w3-margin-top w3-center">
-            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Sparky</b></span>
-                <span class="w3-hide-small w3-text-light-grey">Penguin Inc.</span></h1>
-        </div>
-    </header>
 
     <!-- About Section -->
     <div class="w3-container w3-padding-32" id="about">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About Us</h3>
-        <p>Established in 2020, Sparky Penguins has quickly become one of Michigan’s leading electrical companies.
-        Our journey began with the encouragement of friends and family, which inspired me to attend Jackson College and complete the Electrician Program, 
-        earning an Associate Degree in Electrical Technology. After years of hard work and dedication, I founded Sparky Penguins with a team of three skilled professionals.
-        We proudly serve a diverse range of projects—from residential and commercial to industrial applications. As technology has advanced, so have we. Today, our expertise spans high-voltage systems, 
-        including transformers and single- and three-phase installations, as well as low-voltage automation involving microcontrollers and programmable logic controllers.
-        At Sparky Penguins, we are committed to delivering exceptional service and innovative solutions for all your electrical needs.</p>
+        <p>Sparky Penguins Inc. is a professional electrical contracting company specializing in residential and
+            commercial projects. Our licensed electricians provide high-quality electrical installations, repairs, and
+            upgrades, ensuring safety and efficiency for our clients.</p>
     </div>
-    
-    <!-- Meet Our Team Section -->
-<div class="w3-container w3-padding-32" id="team">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Meet Our Team</h3>
-    <div class="w3-row">
-        <!-- Team Member 1 -->
-        <div class="w3-col m4 w3-center">
-            <img src="assets/employee1.jpg" alt="Employee 1 Name" style="width:100%; max-width:200px" class="w3-circle">
-            <h4>Jose</h4>
-            <p>Master Electrician</p>
-        </div>
-        <!-- Team Member 2 -->
-        <div class="w3-col m4 w3-center">
-            <img src="assets/employee2.jpg" alt="Employee 2 Name" style="width:100%; max-width:200px" class="w3-circle">
-            <h4>Nathan</h4>
-            <p>Journeyman</p>
-        </div>
-        <!-- Team Member 3 -->
-        <div class="w3-col m4 w3-center">
-            <img src="assets/employee3.jpg" alt="Employee 3 Name" style="width:100%; max-width:200px" class="w3-circle">
-            <h4>Darrika</h4>
-            <p>Journeyman</p>
-        </div>
-          <!-- Team Member 4 -->
-        <div class="w3-col m4 w3-center">
-            <img src="assets/employee4.jpg" alt="Employee 4 Name" style="width:100%; max-width:200px" class="w3-circle">
-            <h4>Nik</h4>
-            <p>Journeyman</p>
-        </div>
-    </div>
-</div>
 
     <!-- Services Section -->
     <div class="w3-container w3-padding-32" id="services">
