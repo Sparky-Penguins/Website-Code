@@ -86,20 +86,36 @@
         </ul>
     </div>
 
-    <!-- Contact Section -->
-    <div class="w3-container w3-padding-32" id="contact">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
-        <p>We'd love to hear from you! Reach out to us for your electrical needs.</p>
-        <form action="#" target="_blank">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="Message" required name="Message">
-            <button class="w3-button w3-black w3-section" type="submit">
-                <i class="fa fa-paper-plane"></i> SEND MESSAGE
-            </button>
-        </form>
-    </div>
+<!-- Contact Section -->
+<div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
+    <p>We'd love to hear from you! Reach out to us for your electrical needs.</p>
+    <form id="contactForm" action="#" target="_blank">
+        <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Message" required name="Message">
+        <button class="w3-button w3-black w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+    </form>
+</div>
+
+<!-- JavaScript to handle the form submission -->
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Create the JSON response object
+    const response = {message: "Your request has been received, please allow up to 24 hours for a team member to contact you."};
+
+    // Convert the object to a nicely formatted JSON string
+    const jsonResponse = JSON.stringify(response, null, 2);
+
+    // Display the JSON string in a popup (using an alert here)
+    alert(jsonResponse);
+});
+</script>
 
     <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-16">
