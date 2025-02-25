@@ -5,7 +5,8 @@
     <title>Sparky Penguins Inc.</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-signin-client_id" content="SparkyPengiuns.apps.googleusercontent.com">
+    <meta name="google-signin-client_id"
+        content="119749335757-7vu3fcc329nm4o5id8fsks0qs00ojef5.apps.googleusercontent.com">
     <link rel="stylesheet" href="./style.css">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
@@ -24,7 +25,7 @@
             <a id="about-link" href="#about">About</a>
             <a id="services-link" href="#services">Services</a>
             <a id="contact-link" href="#contact">Contact</a>
-            <a id="products-link" href="#products">Products</a>
+            <a id="shop-link" href="#shop">Shop</a>
             <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </div>
     </div>
@@ -107,7 +108,7 @@
         </div>
     </div>
 
-    <div id="product-page">
+    <div id="shop-page">
         <div class="product">
             <img src="product1.jpg" alt="Product 1">
             <h2>Power Surge Protector</h2>
@@ -166,10 +167,11 @@
         <p>&copy; 2025 Sparky Penguin Inc. | Electrical Contracting Services</p>
     </footer>
     <script>
-        document.getElementById("products-link").addEventListener("click", function (event) {
+        document.getElementById("shop-link").addEventListener("click", function (event) {
             event.preventDefault();
             document.getElementById("main-page").style.display = "none";
-            document.getElementById("product-page").style.display = "flex";
+            document.getElementById("shop-page").style.display = "flex";
+            location.hash = "shop";
         });
 
         document.getElementById("about-link").addEventListener("click", function (event) {
@@ -194,6 +196,13 @@
         });
 
 
+    </script>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Useful for debugging
+            console.log('Name: ' + profile.getName());
+        }
     </script>
 
 </body>
