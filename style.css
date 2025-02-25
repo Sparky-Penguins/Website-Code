@@ -196,7 +196,7 @@ a {
     justify-content: space-around;
     padding: 20px;
 }
-.product {
+.service {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -205,19 +205,19 @@ a {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.product img {
+.service img {
     width: 100%;
     height: auto;
     border-bottom: 1px solid #ddd;
 }
-.product h2 {
+.service h2 {
     margin: 15px 0;
 }
-.product p {
+.service p {
     padding: 0 15px;
     color: #555;
 }
-.product .price {
+.service .price {
     font-size: 1.2em;
     font-weight: bold;
     color: #27ae60;
