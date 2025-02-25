@@ -21,90 +21,161 @@
     <div class="navbar">
         <a href="#home"><b>Sparky Penguin Inc.</b></a>
         <div class="right">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+            <a id="about-link" href="#about">About</a>
+            <a id="services-link" href="#services">Services</a>
+            <a id="contact-link" href="#contact">Contact</a>
+            <a id="products-link" href="#products">Products</a>
             <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </div>
     </div>
-    <!-- About Section -->
-    <div class="w3-container w3-padding-32" id="about">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About Us</h3>
-        <p>Established in 2020, Sparky Penguins has quickly become one of Michigan’s leading electrical companies.
-            Our journey began with the encouragement of friends and family, which inspired me to attend Jackson College
-            and complete the Electrician Program,
-            earning an Associate Degree in Electrical Technology. After years of hard work and dedication, I founded
-            Sparky Penguins with a team of three skilled professionals.
-            We proudly serve a diverse range of projects—from residential and commercial to industrial applications. As
-            technology has advanced, so have we. Today, our expertise spans high-voltage systems,
-            including transformers and single- and three-phase installations, as well as low-voltage automation
-            involving microcontrollers and programmable logic controllers.
-            At Sparky Penguins, we are committed to delivering exceptional service and innovative solutions for all your
-            electrical needs.</p>
-    </div>
+    <div id="main-page">
+        <!-- About Section -->
+        <div class="w3-container w3-padding-32" id="about">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About Us</h3>
+            <p>Established in 2020, Sparky Penguins has quickly become one of Michigan’s leading electrical companies.
+                Our journey began with the encouragement of friends and family, which inspired me to attend Jackson
+                College
+                and complete the Electrician Program,
+                earning an Associate Degree in Electrical Technology. After years of hard work and dedication, I founded
+                Sparky Penguins with a team of three skilled professionals.
+                We proudly serve a diverse range of projects—from residential and commercial to industrial applications.
+                As
+                technology has advanced, so have we. Today, our expertise spans high-voltage systems,
+                including transformers and single- and three-phase installations, as well as low-voltage automation
+                involving microcontrollers and programmable logic controllers.
+                At Sparky Penguins, we are committed to delivering exceptional service and innovative solutions for all
+                your
+                electrical needs.</p>
+        </div>
 
-    <!-- Meet Our Team Section -->
-    <div class="container" id="team">
-        <h3 class="team-heading">Meet Our Team</h3>
-        <div class="team-grid">
-            <!-- Team Member 1 -->
-            <div class="team-member">
-                <img src="./assets/employee1.jpg" alt="Jose" class="team-img">
-                <h4>Jose</h4>
-                <p>Master Electrician</p>
+        <!-- Meet Our Team Section -->
+        <div class="container" id="team">
+            <h3 class="team-heading">Meet Our Team</h3>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <img src="./assets/employee1.jpg" alt="Jose" class="team-img">
+                    <h4>Jose</h4>
+                    <p>Master Electrician</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <img src="./assets/employee2.jpg" alt="Nathan" class="team-img">
+                    <h4>Nathan</h4>
+                    <p>Journeyman</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <img src="./assets/employee3.webp" alt="Darrika" class="team-img">
+                    <h4>Darrika</h4>
+                    <p>Journeyman</p>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <img src="./assets/employee4.png" alt="Nik" class="team-img">
+                    <h4>Nik</h4>
+                    <p>Journeyman</p>
+                </div>
             </div>
-            <!-- Team Member 2 -->
-            <div class="team-member">
-                <img src="./assets/employee2.jpg" alt="Nathan" class="team-img">
-                <h4>Nathan</h4>
-                <p>Journeyman</p>
-            </div>
-            <!-- Team Member 3 -->
-            <div class="team-member">
-                <img src="./assets/employee3.webp" alt="Darrika" class="team-img">
-                <h4>Darrika</h4>
-                <p>Journeyman</p>
-            </div>
-            <!-- Team Member 4 -->
-            <div class="team-member">
-                <img src="./assets/employee4.png" alt="Nik" class="team-img">
-                <h4>Nik</h4>
-                <p>Journeyman</p>
-            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="w3-container w3-padding-32" id="services">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Services</h3>
+            <ul>
+                <li>Residential Electrical Wiring</li>
+                <li>Commercial Electrical Installations</li>
+                <li>Panel Upgrades & Repairs</li>
+                <li>Lighting Design & Installation</li>
+                <li>Emergency Electrical Services</li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="w3-container w3-padding-32" id="contact">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
+            <p>We'd love to hear from you! Reach out to us for your electrical needs.</p>
+            <form action="#" target="_blank">
+                <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+                <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+                <input class="w3-input w3-section w3-border" type="text" placeholder="Message" required name="Message">
+                <button class="w3-button w3-black w3-section" type="submit">
+                    <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                </button>
+            </form>
         </div>
     </div>
 
-    <!-- Services Section -->
-    <div class="w3-container w3-padding-32" id="services">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Services</h3>
-        <ul>
-            <li>Residential Electrical Wiring</li>
-            <li>Commercial Electrical Installations</li>
-            <li>Panel Upgrades & Repairs</li>
-            <li>Lighting Design & Installation</li>
-            <li>Emergency Electrical Services</li>
-        </ul>
-    </div>
+    <div id="product-page">
+        <div class="product">
+            <img src="product1.jpg" alt="Product 1">
+            <h2>Power Surge Protector</h2>
+            <p>Protect your electronics with our high-performance surge protector. Ideal for home and office use.</p>
+            <div class="price">$25.99</div>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
 
-    <!-- Contact Section -->
-    <div class="w3-container w3-padding-32" id="contact">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
-        <p>We'd love to hear from you! Reach out to us for your electrical needs.</p>
-        <form action="#" target="_blank">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="Message" required name="Message">
-            <button class="w3-button w3-black w3-section" type="submit">
-                <i class="fa fa-paper-plane"></i> SEND MESSAGE
-            </button>
-        </form>
+        <div class="product">
+            <img src="product2.jpg" alt="Product 2">
+            <h2>LED Light Bulb</h2>
+            <p>Save energy and brighten your space with our eco-friendly LED light bulbs. Long-lasting and
+                cost-effective.</p>
+            <div class="price">$7.99</div>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
+
+        <div class="product">
+            <img src="product3.jpg" alt="Product 3">
+            <h2>Smart Thermostat</h2>
+            <p>Control your home’s temperature from anywhere with our smart thermostat. Easy to install and use.</p>
+            <div class="price">$119.99</div>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
+
+        <div class="product">
+            <img src="product4.jpg" alt="Product 4">
+            <h2>Portable Generator</h2>
+            <p>Reliable power on the go. Our portable generator is perfect for outdoor activities and emergencies.</p>
+            <div class="price">$299.99</div>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-16">
         <p>&copy; 2025 Sparky Penguin Inc. | Electrical Contracting Services</p>
     </footer>
+    <script>
+        document.getElementById("products-link").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("main-page").style.display = "none";
+            document.getElementById("product-page").style.display = "flex";
+        });
+
+        document.getElementById("about-link").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("main-page").style.display = "block";
+            document.getElementById("product-page").style.display = "none";
+            location.hash = "about"; // This will make the page scroll to the About section
+        });
+
+        document.getElementById("services-link").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("main-page").style.display = "block";
+            document.getElementById("product-page").style.display = "none";
+            location.hash = "services"; // This will make the page scroll to the Services section
+        });
+
+        document.getElementById("contact-link").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("main-page").style.display = "block";
+            document.getElementById("product-page").style.display = "none";
+            location.hash = "contact"; // This will make the page scroll to the Contact section
+        });
+
+
+    </script>
 
 </body>
 
