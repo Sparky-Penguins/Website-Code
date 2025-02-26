@@ -143,60 +143,10 @@
         </div>
     </div>
 
-    <!-- JavaScript to handle the form submission -->
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent the default form submission
-
-            // Create the JSON response object
-            const response = "Your request has been received, please allow up to 24 hours for a team member to contact you.";
-
-            // Convert the object to a formatted JSON string
-            const jsonResponse = JSON.stringify(response, null, 2);
-
-            // Display the JSON message in a popup
-            alert(jsonResponse);
-
-            // Clear out the form fields
-            this.reset();
-        });
-    </script>
-
     <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-16">
         <p>&copy; 2025 Sparky Penguin Inc. | Electrical Contracting Services</p>
     </footer>
-    <script>
-        document.getElementById("shop-link").addEventListener("click", function (event) {
-            event.preventDefault();
-            document.getElementById("main-page").style.display = "none";
-            document.getElementById("shop-page").style.display = "flex";
-            location.hash = "shop";
-        });
-
-        document.getElementById("about-link").addEventListener("click", function (event) {
-            event.preventDefault();
-            document.getElementById("main-page").style.display = "block";
-            document.getElementById("shop-page").style.display = "none";
-            location.hash = "about"; // This will make the page scroll to the About section
-        });
-
-        document.getElementById("services-link").addEventListener("click", function (event) {
-            event.preventDefault();
-            document.getElementById("main-page").style.display = "block";
-            document.getElementById("shop-page").style.display = "none";
-            location.hash = "services"; // This will make the page scroll to the Services section
-        });
-
-        document.getElementById("contact-link").addEventListener("click", function (event) {
-            event.preventDefault();
-            document.getElementById("main-page").style.display = "block";
-            document.getElementById("shop-page").style.display = "none";
-            location.hash = "contact"; // This will make the page scroll to the Contact section
-        });
-
-
-    </script>
     <script>
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
@@ -204,6 +154,11 @@
             console.log('Name: ' + profile.getName());
         }
     </script>
+
+    <!-- JavaScript to handle the form submission -->
+    <script src="./scripts/invoice.js"></script>
+    <!-- JavaScript for the Shop code-->
+    <script src="./scripts/shop.js"></script>
 
 </body>
 
