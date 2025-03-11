@@ -25,3 +25,15 @@ document.getElementById("contact-link").addEventListener("click", function (even
     document.getElementById("shop-page").style.display = "none";
     location.hash = "contact"; // This will make the page scroll to the Contact section
 });
+
+// Select all elements with the class "btn"
+const buttons = document.querySelectorAll('.btn');
+
+// Loop through each element and bind the click event
+buttons.forEach(button => {
+  button.addEventListener('click', function() {
+    if (localStorage.getItem("UserID")==null) {
+        google.accounts.id.prompt();
+    }
+  });
+});

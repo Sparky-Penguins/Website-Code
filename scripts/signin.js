@@ -18,6 +18,7 @@ window.handleCredentialResponse = (response) => {
   const profilePic = document.getElementById("profilePic");
   profilePic.src = profilePictureUrl;
   document.getElementById("profileContainer").style.display = "block"; // Show profile picture
+  localStorage.setItem("UserID", userId);
 };
 
 // Function to decode the JWT token
@@ -35,3 +36,6 @@ function decodeJwtResponse(token) {
 
   return JSON.parse(jsonPayload); // Parse the decoded string as JSON
 }
+
+window.localStorage.clear(); 
+window.sessionStorage.clear(); 
