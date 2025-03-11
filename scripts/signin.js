@@ -1,6 +1,8 @@
-function onSignIn(googleUser) {
-    console.log(googleUser)
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Useful for debugging
-    console.log('Name: ' + profile.getName());
+async function handleCredentialResponse(response) {
+    const token = response.credential;
+
+    // Send token to backend for verification
+    const res = await fetch('http://localhost:3000/auth/google?token=' + token);
+    const data = await res.json();
+    console.log('User Info:', data);
 }
