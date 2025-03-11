@@ -15,3 +15,7 @@ window.handleCredentialResponse = (response) => {
   const jwtToken = response.credential; // User info is in this JWT token
   console.log("JWT Token: ", jwtToken);
 };
+google.accounts.id.disableAutoSelect();  // Prevents automatic sign-in
+google.accounts.id.signOut();  // Signs out the user explicitly
+window.localStorage.clear();  // Clears localStorage
+window.sessionStorage.clear();  // Clears sessionStorage
