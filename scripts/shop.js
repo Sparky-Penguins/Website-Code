@@ -34,6 +34,7 @@ buttons.forEach(button => {
   button.addEventListener('click', function() {
     if (localStorage.getItem("UserID")==null) {
         google.accounts.id.prompt();
+        console.log("Hello")
     }
   });
 });
