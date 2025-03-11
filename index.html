@@ -5,10 +5,10 @@
     <title>Sparky Penguins Inc.</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-signin-client_id"
-        content="119749335757-7vu3fcc329nm4o5id8fsks0qs00ojef5.apps.googleusercontent.com">
+    <!-- <meta name="google-signin-client_id"
+        content="119749335757-7vu3fcc329nm4o5id8fsks0qs00ojef5.apps.googleusercontent.com"> -->
     <link rel="stylesheet" href="./style.css">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 
 <body>
@@ -26,7 +26,11 @@
             <a id="services-link" href="#services">Services</a>
             <a id="contact-link" href="#contact">Contact</a>
             <a id="shop-link" href="#shop">Shop</a>
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <div id="g_id_onload"
+                data-client_id="119749335757-7vu3fcc329nm4o5id8fsks0qs00ojef5.apps.googleusercontent.com"
+                data-callback="onSignIn">
+            </div>
+            <div class="g_id_signin" data-type="standard"></div>
         </div>
     </div>
     <div id="main-page">
@@ -142,23 +146,39 @@
             <a href="#" class="btn">Request Now</a>
         </div>
     </div>
-
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-16">
         <p>&copy; 2025 Sparky Penguin Inc. | Electrical Contracting Services</p>
     </footer>
     <script>
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Useful for debugging
-            console.log('Name: ' + profile.getName());
-        }
     </script>
 
     <!-- JavaScript to handle the form submission -->
     <script src="./scripts/invoice.js"></script>
     <!-- JavaScript for the Shop code-->
     <script src="./scripts/shop.js"></script>
+    <script>
+        // Get the button:
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }  
+    </script>
 
 </body>
 
