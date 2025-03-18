@@ -1,5 +1,5 @@
 fetch(
-  "https://3f6e-2601-405-4b00-2270-a17b-f1ac-d1a0-fc1d.ngrok-free.app/hello",
+  "https://rational-mastiff-model.ngrok-free.app/hello",
   {
     method: "GET",
     headers: {
@@ -11,7 +11,7 @@ fetch(
   .then((data) => {
     console.log(data);
     // Display the response in the div with id 'response'
-    alert(data);
+    alert("This is hello from the server");
   })
   .catch((error) => {
     // Handle any errors
