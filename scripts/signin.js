@@ -36,6 +36,6 @@ function decodeJwtResponse(token) {
 
   return JSON.parse(jsonPayload); // Parse the decoded string as JSON
 }
-
+ 
 window.localStorage.clear(); 
 window.sessionStorage.clear(); 
