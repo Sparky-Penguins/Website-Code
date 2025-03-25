@@ -33,7 +33,7 @@
             </div>
             <div id="profileContainer" style="display: none;">
                 <img id="profilePic" src="" alt="User Profile Picture">
-              </div>
+            </div>
             <div class="g_id_signin" data-type="standard"></div>
         </div>
     </div>
@@ -105,19 +105,73 @@
             <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
             <p>We'd love to hear from you! Reach out to us for your electrical needs.</p>
             <form id="contactForm" action="#" target="_blank">
-                <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-                <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
-                <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-                <input class="w3-input w3-section w3-border" type="text" placeholder="Message" required name="Message">
+                <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name" id="name">
+                <input class="w3-input w3-section w3-border" type="email" placeholder="Email" required name="Email" id="email">
+                <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject" id="subject">
+                <input class="w3-input w3-section w3-border" type="text" placeholder="Message" required name="Message" id="message">
                 <button class="w3-button w3-black w3-section" type="submit">
                     <i class="fa fa-paper-plane"></i> SEND MESSAGE
                 </button>
             </form>
+            <div id="response"></div>
         </div>
     </div>
 
     <div id="shop-page">
     </div>
+
+    <div id="invoice-page">
+        <div id="container">
+            <h2>Admin Invoice Dashboard</h2>
+
+            <!-- Tab Buttons -->
+            <div class="tab-container">
+                <div class="tab active" id="customerTab" onclick="showTab('customer')">Customer Questions</div>
+                <div class="tab" id="jobTab" onclick="showTab('job')">Job Invoices</div>
+            </div>
+
+            <!-- Customer Questions Content -->
+            <div id="customerContent" class="tab-content" style="display: block;">
+                <h3>Customer Questions</h3>
+                <table id="customerTable">
+                    <thead>
+                        <tr>
+                            <th>Customer Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customerBody">
+                        <!-- Dynamic content will go here -->
+                    </tbody>
+                </table>
+                <div id="noCustomerData" class="no-data" style="display: none;">No customer questions available.</div>
+            </div>
+
+            <!-- Job Invoices Content -->
+            <div id="jobContent" class="tab-content">
+                <h3>Job Invoices</h3>
+                <table id="jobTable">
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Description</th>
+                            <th>Cost ($)</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jobBody">
+                        <!-- Dynamic content will go here -->
+                    </tbody>
+                </table>
+                <div id="noJobData" class="no-data" style="display: none;">No job invoices available.</div>
+            </div>
+        </div>
+    </div>
+
+
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-16">

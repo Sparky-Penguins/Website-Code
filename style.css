@@ -31,22 +31,29 @@ html {
     flex-direction: column;
     align-items: center;
 }
+
 .team-heading {
     border-bottom: 1px solid lightgrey;
     padding: 16px;
     text-align: center;
 }
+
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Always 2 columns per row */
+    grid-template-columns: repeat(2, 1fr);
+    /* Always 2 columns per row */
     gap: 16px;
-    justify-items: center; /* Ensures items are centered within each column */
-    max-width: 1200px; /* Optional: limits the grid's maximum width */
+    justify-items: center;
+    /* Ensures items are centered within each column */
+    max-width: 1200px;
+    /* Optional: limits the grid's maximum width */
     width: 100%;
 }
+
 .team-member {
     text-align: center;
 }
+
 .team-img {
     width: 100%;
     max-width: 200px;
@@ -63,16 +70,19 @@ html {
     padding: 15px 20px;
     border-bottom: 2px solid #ccc;
 }
+
 .navbar a {
     text-decoration: none;
     color: black;
     font-size: 18px;
     padding: 10px 15px;
 }
+
 .navbar a:hover {
     background-color: #f0f0f0;
     border-radius: 5px;
 }
+
 .navbar .right {
     display: flex;
     align-items: center;
@@ -196,6 +206,7 @@ a {
     justify-content: space-around;
     padding: 20px;
 }
+
 .service {
     background-color: white;
     border: 1px solid #ddd;
@@ -210,16 +221,19 @@ a {
 .service h2 {
     margin: 15px 0;
 }
+
 .service p {
     padding: 0 15px;
     color: #555;
 }
+
 .service .price {
     font-size: 1.2em;
     font-weight: bold;
     color: #27ae60;
     margin: 10px 0;
 }
+
 .btn {
     background-color: #27ae60;
     color: white;
@@ -228,32 +242,117 @@ a {
     border-radius: 5px;
     margin-bottom: 20px;
 }
+
 .btn:hover {
     background-color: #2ecc71;
 }
 
 #myBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: red; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: red;
+    /* Set a background color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
 }
-  
+
 #myBtn:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
+    background-color: #555;
+    /* Add a dark-grey background on hover */
 }
+
 #profilePic {
-    width: 40px;  
-    height: 40px; 
-    border-radius: 50%;  
-    object-fit: cover;  
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#invoice-page {
+    display: none;
+}
+
+#container {
+    width: 80%;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* display: none; */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tab-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+}
+
+.tab.active {
+    background-color: #007BFF;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
 }

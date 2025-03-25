@@ -41,10 +41,40 @@ fetch("https://rational-mastiff-model.ngrok-free.app/products", {
 
       // Append the service container to the shop page
       shopPage.appendChild(serviceDiv);
-      console.log(serviceDiv)
+      console.log(serviceDiv);
     });
   })
   .catch((error) => {
     // Handle any errors
     console.error("Error:", error);
   });
+
+async function adminLogin(adminId) {
+  try {
+    const loginResponse = await fetch(
+      "https://rational-mastiff-model.ngrok-free.app/admin/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "true",
+        },
+        body: JSON.stringify({ adminId }),
+      }
+    );
+
+    const loginResult = await loginResponse.json();
+
+    if (loginResponse.ok) {
+      console.log("login success");
+      console.log(loginResult);
+      return loginResult;
+    } else {
+      console.log(loginResult.error);
+      return false
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+  return false;
+}

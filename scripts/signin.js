@@ -1,4 +1,5 @@
-window.handleCredentialResponse = (response) => {
+
+window.handleCredentialResponse = async (response) => {
   const jwtToken = response.credential; // This is the JWT token
 
   // Decode the JWT token to get user information
@@ -10,6 +11,10 @@ window.handleCredentialResponse = (response) => {
 
   const userId = decodedToken.sub;
   console.log("User ID: ", userId);
+  let admin = await adminLogin(userId);
+  if (admin) {
+    loadCustomerInvoices(admin);
+  }
 
   // Hide the Google Sign-In button
   document.getElementsByClassName("g_id_signin")[0].style.display = "none";
@@ -36,6 +41,6 @@ function decodeJwtResponse(token) {
 
   return JSON.parse(jsonPayload); // Parse the decoded string as JSON
 }
- 
-window.localStorage.clear(); 
-window.sessionStorage.clear(); 
+
+window.localStorage.clear();
+window.sessionStorage.clear();
