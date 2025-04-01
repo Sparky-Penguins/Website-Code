@@ -1,37 +1,45 @@
-document.getElementById("contactForm").addEventListener("submit", async function (e) {
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", async function (e) {
     e.preventDefault(); // Prevent the default form submission
-
+    if (localStorage.getItem("UserID") === null) {
+      document.getElementById("response").innerText = "Not logged in";
+      return;
+    }
     // Capture form data
     const formData = {
-        Name: document.getElementById("name").value,
-        Email: document.getElementById("email").value,
-        Subject: document.getElementById("subject").value,
-        Message: document.getElementById("message").value
+      Name: document.getElementById("name").value,
+      Email: document.getElementById("email").value,
+      Subject: document.getElementById("subject").value,
+      Message: document.getElementById("message").value,
+      UserId: localStorage.getItem("UserID"),
     };
 
     try {
-        // Send data to the server
-        const response = await fetch('https://rational-mastiff-model.ngrok-free.app/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
+      // Send data to the server
+      const response = await fetch(
+        "https://rational-mastiff-model.ngrok-free.app/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-        const result = await response.json();
+      const result = await response.json();
 
-        // Display server response
-        document.getElementById("response").innerText = result.message;
+      // Display server response
+      document.getElementById("response").innerText = result.message;
 
-        // Reset the form after submission
-        this.reset();
+      // Reset the form after submission
+      this.reset();
     } catch (error) {
-        console.error('Error:', error);
-        document.getElementById("response").innerText = 'Error sending data.';
+      console.error("Error:", error);
+      document.getElementById("response").innerText = "Error sending data.";
     }
-});
-
+  });
 
 // Show the selected tab content
 function showTab(tabName) {
@@ -59,7 +67,7 @@ function loadCustomerInvoices(customerInvoices) {
   if (customerInvoices.length === 0) {
     document.getElementById("noCustomerData").style.display = "block";
     return;
-  } 
+  }
   console.log(customerInvoices);
   customerInvoices.forEach((invoice) => {
     const row = `
@@ -72,6 +80,32 @@ function loadCustomerInvoices(customerInvoices) {
                     </tr>
                 `;
     customerBody.innerHTML += row;
+  });
+}
+
+function loadCustomerOrders(customerOrders) {
+  const customerBody = document.getElementById("jobBody");
+  customerBody.innerHTML = "";
+
+  if (customerOrders.length === 0) {
+    document.getElementById("noOrderData").style.display = "block";
+    return;
+  }
+
+  customerOrders.forEach((order) => {
+    // Loop through each order and create rows for each product in the order
+    order.order.forEach((product) => {
+      const row = `
+                    <tr>
+                        <td>${order.email || "No Email Provided"}</td>
+                        <td>${product.PRODUCT}</td>
+                        <td>${product.PRICE}</td>
+                        <td>${product.quantity}</td>
+                        <td>${order.timestamp}</td>
+                    </tr>
+                `;
+      customerBody.innerHTML += row;
+    });
   });
 }
 
@@ -103,25 +137,3 @@ function loadJobInvoices() {
 // //   loadCustomerInvoices();
 // //   loadJobInvoices();
 // });
-document.addEventListener("DOMContentLoaded", function () {
-  const shopLink = document.getElementById("shop-link");
-
-  // Create the new Invoices link
-  const invoiceLink = document.createElement("a");
-  invoiceLink.id = "invoice-link";
-  invoiceLink.href = "#invoice";
-  invoiceLink.innerText = "Invoices";
-
-  // Insert the Invoices link right after the Shop link
-  shopLink.insertAdjacentElement("afterend", invoiceLink);
-
-  document
-    .getElementById("invoice-link")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-      document.getElementById("main-page").style.display = "none";
-      document.getElementById("shop-page").style.display = "none";
-      document.getElementById("invoice-page").style.display = "block";
-      location.hash = "contact"; // This will make the page scroll to the Contact section
-    });
-});

@@ -1,4 +1,3 @@
-
 window.handleCredentialResponse = async (response) => {
   const jwtToken = response.credential; // This is the JWT token
 
@@ -8,12 +7,30 @@ window.handleCredentialResponse = async (response) => {
   // Extract the profile picture URL
   const profilePictureUrl = decodedToken.picture;
   console.log("Profile Picture URL: ", profilePictureUrl);
+  console.log(decodedToken);
 
   const userId = decodedToken.sub;
   console.log("User ID: ", userId);
   let admin = await adminLogin(userId);
   if (admin) {
     loadCustomerInvoices(admin);
+  }
+
+  let adminOrder = await adminOrders(userId);
+
+  if (adminOrder) {
+    loadCustomerOrders(adminOrder);
+  }
+
+  let user = await userLogin(userId);
+  if (user) {
+    loadCustomerInvoices(user);
+  }
+
+  let userOrder = await userOrders(userId);
+
+  if (userOrder) {
+    loadCustomerOrders(userOrder);
   }
 
   // Hide the Google Sign-In button
@@ -24,6 +41,7 @@ window.handleCredentialResponse = async (response) => {
   profilePic.src = profilePictureUrl;
   document.getElementById("profileContainer").style.display = "block"; // Show profile picture
   localStorage.setItem("UserID", userId);
+  localStorage.setItem("Useremail", decodedToken.email);
 };
 
 // Function to decode the JWT token

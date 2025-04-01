@@ -200,6 +200,35 @@ a {
     border-color: #f1f1f1 !important
 }
 
+/* Center the cart */
+#cart {
+    width: 50%;
+    margin: 20px auto; /* Centers the cart */
+    padding: 15px;
+    text-align: center; /* Centers text */
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: center; /* Ensures cart content is centered */
+}
+
+
+.cart-item button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-item button:hover {
+    background-color: #c0392b;
+}
+
+/* Shop page */
 #shop-page {
     display: none;
     flex-wrap: wrap;
@@ -207,26 +236,23 @@ a {
     padding: 20px;
 }
 
+/* Adjust .service container to allow dynamic height */
 .service {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 250px;
-    height: 200px;
-    margin: 20px;
+    min-height: 220px; /* Increase height to accommodate elements */
+    margin: 5px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.service h2 {
-    margin: 15px 0;
-}
-
-.service p {
-    padding: 0 15px;
-    color: #555;
-}
-
+/* Ensure price, quantity input, and button are aligned properly */
 .service .price {
     font-size: 1.2em;
     font-weight: bold;
@@ -234,13 +260,38 @@ a {
     margin: 10px 0;
 }
 
+/* Quantity and button container */
+.quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto; /* Pushes the quantity + button to bottom */
+}
+
+/* Quantity input */
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    font-size: 1em;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button styling */
 .btn {
     background-color: #27ae60;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    margin-bottom: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn:hover {
