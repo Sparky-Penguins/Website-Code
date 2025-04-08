@@ -15,7 +15,9 @@ fetch("https://rational-mastiff-model.ngrok-free.app/products", {
       // Create the service container
       const serviceDiv = document.createElement("div");
       serviceDiv.classList.add("service");
-
+      // Create photo image
+      const img = document.createElement("img");
+      img.src = `./assets/products/${product.PRODUCT}.png`
       // Create the product name
       const h2 = document.createElement("h2");
       h2.textContent = product.PRODUCT;
@@ -54,6 +56,7 @@ fetch("https://rational-mastiff-model.ngrok-free.app/products", {
       actionDiv.appendChild(btn);
 
       // Append elements to the service container
+      serviceDiv.appendChild(img)
       serviceDiv.appendChild(h2);
       serviceDiv.appendChild(p);
       serviceDiv.appendChild(priceDiv);
