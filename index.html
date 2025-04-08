@@ -22,20 +22,23 @@
     </div>
 
     <!-- Navbar -->
-    <div class="navbar">
-        <a id="home-page-link" href="#"><b>Sparky Penguin Inc.</b></a>
-        <div class="right">
-            <a id="about-link" href="#about">About</a>
-            <a id="services-link" href="#services">Services</a>
-            <a id="contact-link" href="#contact">Contact</a>
-            <a id="shop-link" href="#shop">Shop</a>
-            <div id="g_id_onload" data-client_id="..." data-callback="handleCredentialResponse"
-                data-auto_prompt="false">
+    <div class="navbar-container">
+
+        <div class="navbar">
+            <a id="home-page-link" href="#"><b>Sparky Penguin Inc.</b></a>
+            <div class="right">
+                <a id="about-link" href="#about">About</a>
+                <a id="services-link" href="#services">Services</a>
+                <a id="contact-link" href="#contact">Contact</a>
+                <a id="shop-link" href="#shop">Shop</a>
+                <div id="g_id_onload" data-client_id="..." data-callback="handleCredentialResponse"
+                    data-auto_prompt="false">
+                </div>
+                <div id="profileContainer" style="display: none;">
+                    <img id="profilePic" src="" alt="User Profile Picture">
+                </div>
+                <div class="g_id_signin" data-type="standard"></div>
             </div>
-            <div id="profileContainer" style="display: none;">
-                <img id="profilePic" src="" alt="User Profile Picture">
-            </div>
-            <div class="g_id_signin" data-type="standard"></div>
         </div>
     </div>
 
