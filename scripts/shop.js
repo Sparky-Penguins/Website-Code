@@ -34,6 +34,15 @@ document.getElementById("contact-link").addEventListener("click", function (even
     location.hash = "contact"; // This will make the page scroll to the Contact section
 });
 
+document.getElementById("home-page-link").addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("main-page").style.display = "block";
+    document.getElementById("cart").style.display = "none";
+    document.getElementById("shop-page").style.display = "none";
+    document.getElementById("invoice-page").style.display = "none";
+    location.hash = "#"; // This will make the page scroll to the home page
+});
+
 
 // Select all elements with the class "btn"
 const buttons = document.querySelectorAll('.btn');

@@ -90,9 +90,9 @@ function updateCart() {
   shoppingCart.forEach((item, index) => {
     const itemDiv = document.createElement("div");
     itemDiv.classList.add("cart-item");
-    itemDiv.textContent = `${item.PRODUCT} - ${
-      (parseFloat(item.PRICE) * item.quantity).toFixed(2)
-    } $/ft (x${item.quantity})`;
+    itemDiv.textContent = `${item.PRODUCT} - ${(
+      parseFloat(item.PRICE) * item.quantity
+    ).toFixed(2)} $/ft (x${item.quantity})`;
 
     // Remove button
     const removeBtn = document.createElement("button");
@@ -129,7 +129,7 @@ function submitOrder() {
     body: JSON.stringify({
       order: shoppingCart,
       userId: localStorage.getItem("UserID"),
-      email: localStorage.getItem("Useremail")
+      email: localStorage.getItem("Useremail"),
     }),
   })
     .then((response) => response.json())
@@ -143,164 +143,63 @@ function submitOrder() {
       console.error("Error:", error);
     });
 }
+const addInvoiceLink = () => {
+  if (document.getElementById("invoice-link")) return;
 
-async function adminLogin(adminId) {
-  try {
-    const loginResponse = await fetch(
-      "https://rational-mastiff-model.ngrok-free.app/admin/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "true",
-        },
-        body: JSON.stringify({ adminId }),
-      }
-    );
+  const link = createElement("a", "", "Invoices");
+  link.id = "invoice-link";
+  link.href = "#invoice";
 
-    const loginResult = await loginResponse.json();
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    ["main-page", "shop-page", "cart"].forEach((id) => {
+      document.getElementById(id).style.display = "none";
+    });
+    document.getElementById("invoice-page").style.display = "block";
+    location.hash = "contact";
+  });
 
-    if (loginResponse.ok) {
-      console.log("login success");
-      console.log(loginResult);
-      const shopLink = document.getElementById("shop-link");
+  document.getElementById("shop-link").insertAdjacentElement("afterend", link);
+};
+const createElement = (tag, className = "", text = "") => {
+  const el = document.createElement(tag);
+  if (className) el.className = className;
+  if (text) el.textContent = text;
+  return el;
+};
 
-      // Create the new Invoices link
-      const invoiceLink = document.createElement("a");
-      invoiceLink.id = "invoice-link";
-      invoiceLink.href = "#invoice";
-      invoiceLink.innerText = "Invoices";
+const loginHandler = (endpoint, id) =>
+  fetch(`https://rational-mastiff-model.ngrok-free.app/${endpoint}/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "ngrok-skip-browser-warning": "true",
+    },
+    body: JSON.stringify({ adminId: id }),
+  })
+    .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+    .then(({ ok, data }) => {
+      if (!ok) return console.warn(data.error);
+      addInvoiceLink();
+      return data;
+    })
+    .catch(console.error);
 
-      // Insert the Invoices link right after the Shop link
-      shopLink.insertAdjacentElement("afterend", invoiceLink);
+const adminLogin = (id) => loginHandler("admin", id);
+const userLogin = (id) => loginHandler("user", id);
 
-      document
-        .getElementById("invoice-link")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          document.getElementById("main-page").style.display = "none";
-          document.getElementById("shop-page").style.display = "none";
-          document.getElementById("cart").style.display = "none";
-          document.getElementById("invoice-page").style.display = "block";
-          location.hash = "contact"; // This will make the page scroll to the Contact section
-        });
-      return loginResult;
-    } else {
-      console.log(loginResult.error);
-      return false;
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-  return false;
-}
+const fetchOrders = (role, id) =>
+  fetch(`https://rational-mastiff-model.ngrok-free.app/${role}/orders`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "ngrok-skip-browser-warning": "true",
+    },
+    body: JSON.stringify({ adminId: id }),
+  })
+    .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+    .then(({ ok, data }) => (ok ? data : console.warn(data.error)))
+    .catch(console.error);
 
-async function userLogin(userId) {
-  try {
-    const loginResponse = await fetch(
-      "https://rational-mastiff-model.ngrok-free.app/user/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "true",
-        },
-        body: JSON.stringify({ adminId: userId }),
-      }
-    );
-
-    const loginResult = await loginResponse.json();
-
-    if (loginResponse.ok) {
-      console.log("login success");
-      console.log(loginResult);
-      const shopLink = document.getElementById("shop-link");
-
-      // Create the new Invoices link
-      const invoiceLink = document.createElement("a");
-      invoiceLink.id = "invoice-link";
-      invoiceLink.href = "#invoice";
-      invoiceLink.innerText = "Invoices";
-
-      // Insert the Invoices link right after the Shop link
-      shopLink.insertAdjacentElement("afterend", invoiceLink);
-
-      document
-        .getElementById("invoice-link")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          document.getElementById("main-page").style.display = "none";
-          document.getElementById("shop-page").style.display = "none";
-          document.getElementById("cart").style.display = "none";
-          document.getElementById("invoice-page").style.display = "block";
-          location.hash = "contact"; // This will make the page scroll to the Contact section
-        });
-      return loginResult;
-    } else {
-      console.log(loginResult.error);
-      return false;
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-  return false;
-}
-
-
-async function userOrders(userId) {
-  try {
-    const loginResponse = await fetch(
-      "https://rational-mastiff-model.ngrok-free.app/user/orders",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "true",
-        },
-        body: JSON.stringify({ adminId: userId }),
-      }
-    );
-
-    const loginResult = await loginResponse.json();
-
-    if (loginResponse.ok) {
-      console.log("login success");
-      return loginResult;
-    } else {
-      console.log(loginResult.error);
-      return false;
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-  return false;
-}
-
-async function adminOrders(userId) {
-  try {
-    const loginResponse = await fetch(
-      "https://rational-mastiff-model.ngrok-free.app/admin/orders",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "true",
-        },
-        body: JSON.stringify({ adminId: userId }),
-      }
-    );
-
-    const loginResult = await loginResponse.json();
-
-    if (loginResponse.ok) {
-      console.log("login success");
-      return loginResult;
-    } else {
-      console.log(loginResult.error);
-      return false;
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-  return false;
-}
+const userOrders = (id) => fetchOrders("user", id);
+const adminOrders = (id) => fetchOrders("admin", id);
