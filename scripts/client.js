@@ -1,9 +1,9 @@
 let shoppingCart = []; // Array to store selected products
 
-fetch("https://rational-mastiff-model.ngrok-free.app/products", {
+fetch(serverURL + "/products", {
   method: "GET",
   headers: {
-    "ngrok-skip-browser-warning": "true",
+    "ngrok-skip-browser-warning": "true", 
   },
 })
   .then((response) => response.text())
@@ -124,7 +124,7 @@ function submitOrder() {
     alert("Must be login to place an order");
     return;
   }
-  fetch("https://rational-mastiff-model.ngrok-free.app/order", {
+  fetch(serverURL + "/order", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

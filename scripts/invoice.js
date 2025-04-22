@@ -18,7 +18,7 @@ document
     try {
       // Send data to the server
       const response = await fetch(
-        "https://rational-mastiff-model.ngrok-free.app/contact",
+        serverURL + "/contact",
         {
           method: "POST",
           headers: {
