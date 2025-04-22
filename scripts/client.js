@@ -146,6 +146,9 @@ function submitOrder() {
       console.error("Error:", error);
     });
 }
+
+
+
 const addInvoiceLink = () => {
   if (document.getElementById("invoice-link")) return;
 
@@ -173,7 +176,7 @@ const createElement = (tag, className = "", text = "") => {
 };
 
 const loginHandler = (endpoint, id) =>
-  fetch(`https://rational-mastiff-model.ngrok-free.app/${endpoint}/login`, {
+  fetch(`${serverURL}/${endpoint}/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -193,7 +196,7 @@ const adminLogin = (id) => loginHandler("admin", id);
 const userLogin = (id) => loginHandler("user", id);
 
 const fetchOrders = (role, id) =>
-  fetch(`https://rational-mastiff-model.ngrok-free.app/${role}/orders`, {
+  fetch(`${serverURL}/${role}/orders`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
