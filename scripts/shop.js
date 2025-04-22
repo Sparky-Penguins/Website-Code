@@ -51,8 +51,8 @@ const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
   button.addEventListener('click', function() {
     if (localStorage.getItem("UserID")==null) {
+        // Prompts user to login
         google.accounts.id.prompt();
-        console.log("Hello")
     }
   });
 });

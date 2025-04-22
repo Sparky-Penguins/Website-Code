@@ -164,6 +164,7 @@ const addInvoiceLink = () => {
 
   document.getElementById("shop-link").insertAdjacentElement("afterend", link);
 };
+
 const createElement = (tag, className = "", text = "") => {
   const el = document.createElement(tag);
   if (className) el.className = className;

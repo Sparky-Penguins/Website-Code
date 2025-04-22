@@ -1,3 +1,4 @@
+// Get the user information and process it
 window.handleCredentialResponse = async (response) => {
   const jwtToken = response.credential; // This is the JWT token
 
@@ -9,20 +10,23 @@ window.handleCredentialResponse = async (response) => {
   console.log("Profile Picture URL: ", profilePictureUrl);
   console.log(decodedToken);
 
+  // Extracts the users ID
   const userId = decodedToken.sub;
-  console.log("User ID: ", userId);
+
   let admin = await adminLogin(userId);
+  // Check if the user is an admin and will display th invoives if so
   if (admin) {
     loadCustomerInvoices(admin);
   }
 
   let adminOrder = await adminOrders(userId);
-
+  // Check if the user is an admin and will display the orders if so
   if (adminOrder) {
     loadCustomerOrders(adminOrder);
   }
 
   let user = await userLogin(userId);
+  // Check if the user is a normal user then shows there invoices and orders
   if (user) {
     loadCustomerInvoices(user);
   }
